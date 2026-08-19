@@ -2,42 +2,49 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Permissão para carregar em iFrames como o Canva -->
+  <meta http-equiv="X-Frame-Options" content="ALLOWALL">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * { box-sizing: border-box; }
+    html, body {
       margin: 0;
       padding: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Montserrat', sans-serif;
       background: transparent;
-      color: #6C8EBF; /* Cor exata do seu layout */
+      font-family: 'Montserrat', sans-serif;
+      color: #6C8EBF;
+      overflow: hidden;
     }
     .timer {
       display: flex;
-      gap: 25px;
+      gap: 20px;
       text-align: center;
     }
     .box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 60px;
+      min-width: 55px;
     }
     .num {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       font-weight: 700;
       line-height: 1;
     }
     .label {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-top: 6px;
+      letter-spacing: 1px;
+      margin-top: 5px;
       opacity: 0.9;
     }
   </style>
@@ -51,8 +58,7 @@
   </div>
 
   <script>
-    // Data configurada para 12 de Dezembro de 2026 às 19:00 (Ajuste a hora se necessário)
-    const dataCasamento = new Date("2026-12-12T16:00:00").getTime();
+    const dataCasamento = new Date("2026-12-12T19:00:00").getTime();
 
     function atualizarContador() {
       const agora = new Date().getTime();
